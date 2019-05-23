@@ -1,25 +1,39 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import logo from "./logo.svg";
+import "./App.css";
+import NavBar from "./components/navigation/NavBar";
+import SideDrawer from "./components/navigation/SideDrawer";
+import Backdrop from "./components/navigation/Backdrop";
+import Homepage from "./components/homepage/Homepage";
 
 class App extends Component {
+  state = {
+    sideDrawerOpen: false
+  };
+
+  drawerToggleClickHandler = () => {
+    this.setState(prevState => {
+      return { sideDrawerOpen: !prevState.sideDrawerOpen };
+    });
+  };
+
+  backdropClickHandler = () => {
+    this.setState({ sideDrawerOpen: false });
+  };
+
   render() {
+    let backDrop;
+
+    if (this.state.sideDrawerOpen) {
+      backDrop = <Backdrop backdropClickHandler={this.backdropClickHandler} />;
+    }
+
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div className="App" style={{ height: "100%" }}>
+        <NavBar drawerToggleClickHandler={this.drawerToggleClickHandler} />
+        <SideDrawer show={this.state.sideDrawerOpen} />
+        {backDrop}
+        <Homepage />
       </div>
     );
   }

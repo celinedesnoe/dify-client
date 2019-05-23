@@ -1,0 +1,81 @@
+@import url(//db.onlinewebfonts.com/c/17363ed78e2b5e259e228bad72318a1f?family=American+Typewriter);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "American Typewriter";
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif; */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+}
+
+.toolbar {
+  position: fixed;
+  width: 100%;
+  background-color: #b1d3c8;
+  top: 0;
+  left: 0;
+  height: 60px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.toolbar-navigation {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: left;
+  padding: 0 1rem;
+}
+
+.toolbar-logo,
+a {
+  margin-left: 1rem;
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.toolbar-navigation-items a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5rem;
+}
+
+.toolbar-navigation-items ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.toolbar-navigation-items li {
+  padding: 0 0.5rem;
+}
+
+.toolbar-navigation-items a:hover,
+.toolbar-navigation-items a:active {
+  color: black;
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .toolbar-navigation-items {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .toolbar-toggle-button {
+    display: none;
+  }
+  .toolbar-logo {
+    margin-left: 0;
+  }
+}

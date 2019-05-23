@@ -1,9 +1,5 @@
 @import url(//db.onlinewebfonts.com/c/17363ed78e2b5e259e228bad72318a1f?family=American+Typewriter);
 
-html {
-  height: 100%;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -16,7 +12,26 @@ body {
   height: 100%;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.homepage {
+  height: 100vh;
+}
+
+.homepage-1 {
+  display: block;
+  position: relative;
+  top: 60px;
+  height: calc(100% - 60px);
+  background: url("../../images_test/homepage2.jpg");
+  background-repeat: no-repeat;
+  background: linear-gradient(
+        rgba(255, 255, 255, 0.85),
+        rgba(255, 255, 255, 0.8)
+      )
+      no-repeat scroll 0 0,
+    url("../../images_test/homepage2.jpg");
+}
+
+h1 {
+  text-align: center;
+  position: relative;
 }
