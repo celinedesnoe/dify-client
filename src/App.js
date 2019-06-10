@@ -1,10 +1,12 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+import { Route } from "react-router-dom";
+
 import "./App.css";
 import NavBar from "./components/navigation/NavBar";
 import SideDrawer from "./components/navigation/SideDrawer";
 import Backdrop from "./components/navigation/Backdrop";
 import Homepage from "./components/homepage/Homepage";
+import ListRecipes from "./components/recipes/ListRecipes";
 
 class App extends Component {
   state = {
@@ -33,7 +35,8 @@ class App extends Component {
         <NavBar drawerToggleClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
-        <Homepage />
+        <Route path="/" component={Homepage} />
+        <Route path="/recettes" component={ListRecipes} />
       </div>
     );
   }

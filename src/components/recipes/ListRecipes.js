@@ -7,7 +7,14 @@ class ListRecipes extends Component {
     };
   }
   render() {
-    return <div />;
+    return (
+      <div>
+        {" "}
+        <div>
+          <input type="text" placeholder="Search.." />
+        </div>
+      </div>
+    );
   }
 }
 

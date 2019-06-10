@@ -6,7 +6,7 @@
   top: 0;
   left: 0;
   width: 70%;
-  max-width: 400px;
+  max-width: 300px;
   z-index: 200;
   transform: translateX(-100%);
   transition: transform 0.3s ease-out;
@@ -37,6 +37,7 @@
 .side-drawer a:hover,
 .side-drawer a:active {
   color: #b1d3c8;
+  text-decoration: none;
 }
 
 @media (min-width: 769px) {
