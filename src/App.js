@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 
 import "./App.css";
 import NavBar from "./components/navigation/NavBar";
@@ -35,8 +35,10 @@ class App extends Component {
         <NavBar drawerToggleClickHandler={this.drawerToggleClickHandler} />
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backDrop}
-        <Route path="/" component={Homepage} />
-        <Route path="/recettes" component={ListRecipes} />
+        <Switch>
+          <Route path="/recettes" component={ListRecipes} />
+          <Route path="/" component={Homepage} />
+        </Switch>
       </div>
     );
   }
